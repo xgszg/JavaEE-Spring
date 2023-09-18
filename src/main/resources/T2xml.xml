@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置Student类 -->
+    <bean id="student" class="test1.T2Student">
+        <constructor-arg value="小怪兽" />
+    </bean>
+
+    <!-- 配置Order类，并注入Student依赖和productName属性 -->
+    <bean id="order" class="test1.T2Order">
+        <constructor-arg ref="student" />
+        <constructor-arg value="Java框架" />
+    </bean>
+</beans>
