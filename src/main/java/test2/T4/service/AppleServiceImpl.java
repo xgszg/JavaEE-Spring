@@ -11,12 +11,9 @@ import java.util.List;
 
 @Service
 public class AppleServiceImpl {
-    private final AppleDaoImpl appleDao;
 
     @Autowired
-    public AppleServiceImpl(AppleDaoImpl appleDao) {
-        this.appleDao = appleDao;
-    }
+    private AppleDaoImpl appleDao;
 
     public String getApplesAsJson(int count) {
         List<Apple> apples = appleDao.getApples(count);

@@ -6,11 +6,8 @@ import test2.T4.service.AppleServiceImpl;
 
 @Controller
 public class AppleController {
-    private final AppleServiceImpl appleService;
     @Autowired
-    public AppleController(AppleServiceImpl appleService) {
-        this.appleService = appleService;
-    }
+    private AppleServiceImpl appleService;
     public void printApples(int count) {
         String json = appleService.getApplesAsJson(count);
         System.out.println(json);
